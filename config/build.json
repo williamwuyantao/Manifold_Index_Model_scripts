@@ -1,0 +1,30 @@
+{
+  "cuda_flags": "--ptxas-options=-v -DMANOR_M_JACOBI_READ_BARRIER=1",
+  "architecture_selection": "By default, CUDA_ARCH=native targets the visible GPU; set CUDA_ARCH explicitly when cross-compiling or building without a GPU.",
+  "options": {
+    "MANOR_M_STREAM_OWNER_ROWS": "ON",
+    "MANOR_M_AGGREGATION_TILED_MASK": "ON",
+    "MANOR_M_AGGREGATION_WARP_ENTRIES": "ON",
+    "MANOR_M_AGGREGATION_WARP_GATHER": "OFF",
+    "MANOR_M_BUILD_MATLAB": "OFF",
+    "MANOR_M_DEVTAN_ORTHONORMAL_FP64": "ON",
+    "MANOR_M_EVAL_MIN_BLOCKS_PER_SM": "5",
+    "MANOR_M_GENERATED_PREPARED_RESPONSE": "OFF",
+    "MANOR_M_PHASE1_SELECT_MIN_BLOCKS_PER_SM": "24",
+    "MANOR_M_REGRESSION_COOPERATIVE_SOLVE": "ON",
+    "MANOR_M_REGRESSION_PARALLEL_SYSTEM": "ON",
+    "MANOR_M_REGRESSION_SHARED_SOLVE": "ON",
+    "MANOR_M_REGRESSION_SHUFFLE_INPUTS": "ON",
+    "MANOR_M_REGRESSION_WARP_ENTRIES": "ON",
+    "MANOR_M_REGRESSION_WARP_SYNC": "ON",
+    "MANOR_M_STATIC_GNU_RUNTIME": "OFF",
+    "MANOR_M_HOST_INDEX_VECTOR_CHECK": "ON"
+  },
+  "python_dependencies": {
+    "python": "3.11.16",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "h5py": "3.16.0"
+  },
+  "linking": "Dynamic GNU runtime by default; STATIC_GNU_RUNTIME=ON requires the static libstdc++ archive. Numerical CUDA options are unchanged."
+}

@@ -1,0 +1,9 @@
+{
+  "K_offset": -12,
+  "alpha": 0.005,
+  "bite": 2,
+  "eval_h": 0.25,
+  "eval_rho": 0.5,
+  "h_scale": 2.45,
+  "rho_init": 0.5
+}

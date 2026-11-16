@@ -1,0 +1,13 @@
+{
+  "fixed_parameters": {
+    "K_offset": 0.0,
+    "alpha": 0.017362,
+    "bite": 4.0,
+    "eval_h": 0.5625,
+    "eval_rho": 0.3333333333333333,
+    "h_scale": 3.5714285714285716,
+    "rho_init": 2.6241338308253725
+  },
+  "stage1": true,
+  "stage2": true
+}

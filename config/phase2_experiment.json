@@ -1,0 +1,170 @@
+{
+  "schema": "phase2-paper-experiment.v1",
+  "setup_id": "bumpy_sphere_v2_D20_Y2",
+  "ambient_dimension": 20,
+  "intrinsic_dimension": 2,
+  "response_components": 6,
+  "N_values": [
+    500000,
+    700000,
+    1000000
+  ],
+  "repetitions": 10,
+  "cases": 30,
+  "iteration_states": 850,
+  "validation_queries": 5000,
+  "testing_queries": 5000,
+  "fixed_parameters": {
+    "K_offset": 0,
+    "alpha": 0.00152,
+    "bite": 4,
+    "eval_h": 0.14814814814814814,
+    "eval_rho": 1.5396007178390019,
+    "h_scale": 6.999999999999999,
+    "rho_init": 0.3448275862068966
+  },
+  "derived_by_N": [
+    {
+      "N": 500000,
+      "n_Y": 760,
+      "k_star": 27
+    },
+    {
+      "N": 700000,
+      "n_Y": 1064,
+      "k_star": 27
+    },
+    {
+      "N": 1000000,
+      "n_Y": 1520,
+      "k_star": 28
+    }
+  ],
+  "response_noise_relative": 0.01,
+  "response_formula": "phi_j=15*xi_j+2*xi_(j+1)*xi_(j+2); interleaved (1+cos(phi_j))/2, (1+sin(phi_j))/2",
+  "response_rotation": [
+    [
+      0.04400330497343763,
+      0.2393049104476821,
+      -0.9699468382272511
+    ],
+    [
+      -0.30239263248978127,
+      0.9285337478735444,
+      0.21536892736838617
+    ],
+    [
+      0.952167214814349,
+      0.2838278331938852,
+      0.11322259552381468
+    ]
+  ],
+  "geometry_scale": 47.19858183760044,
+  "radial_geometry": {
+    "broad_v0_factor": 0.75,
+    "construction": "two_scale_v0_plus_centered_fibonacci_caps",
+    "micro_amplitude": 0.36,
+    "micro_cap_centering": "0.5*w^2*(1-exp(-2/w^2))",
+    "micro_center_count": 32,
+    "micro_fibonacci_phase": 0.73,
+    "micro_raw_rule": "0.72*sin(1.73*i+0.21)+0.28*cos(2.91*i+0.47), mean-centered and max-abs normalized",
+    "micro_width_rule": "0.26+0.055*((5*i+1) mod 8)/7",
+    "v0_amplitude": [
+      0.18,
+      -0.12,
+      0.1,
+      0.075,
+      -0.065,
+      0.055
+    ],
+    "v0_centers": [
+      [
+        0.8310811086191705,
+        -0.22028655891110546,
+        0.5106642956575627
+      ],
+      [
+        -0.31045048003119535,
+        0.9113223768657671,
+        0.2703923535755573
+      ],
+      [
+        0.15001500225037506,
+        -0.6200620093015502,
+        0.7700770115519253
+      ],
+      [
+        -0.7593927286285599,
+        -0.4396484218375873,
+        -0.47961646018645887
+      ],
+      [
+        0.5493959964233911,
+        0.3895717065547682,
+        -0.7391873406423806
+      ],
+      [
+        -0.17974852796821766,
+        0.09986029331567649,
+        0.9786308744936295
+      ]
+    ],
+    "v0_linear": [
+      0.035,
+      -0.025,
+      0.045
+    ],
+    "v0_width": [
+      0.36,
+      0.52,
+      0.43,
+      0.61,
+      0.39,
+      0.56
+    ],
+    "version": "bumpy_sphere_v2"
+  },
+  "global_reach": 4.47213595499958,
+  "predictor_noise": {
+    "construction": "original local-reach-scaled projected normal noise",
+    "sigma": 0.5,
+    "maximum_normal_radius_over_local_reach": 0.882,
+    "definition": "Gaussian direction in R20, truncated chi-square_20 radius, tangent projection, local-reach scaling",
+    "local_reach_calibration": "config/geometry_recipe.npz",
+    "fixed_global_tube": false
+  },
+  "response_noise_covariance": "1e-4 times covariance of first min(n,1M) clean training responses in each realization",
+  "fitting_truth": "noisy training responses",
+  "validation_truth": "noisy validation responses",
+  "testing_truth": "clean testing responses",
+  "resampling": "fresh IID points and noise for every N/repetition/split; matched to the Figure 9 IID observations",
+  "base_seed": 2026100809,
+  "rng_key": [
+    "base_seed",
+    "N",
+    "repetition",
+    "split",
+    "stream",
+    "chunk_start"
+  ],
+  "generation_chunk_rows": 65536,
+  "iteration_zero": "actual Phase 1 initialization",
+  "tangent_support": "same immutable Phase 1 owner rows at every iteration",
+  "direct_tangent_error": "mean sqrt(2-||T_true.T @ T_estimated||_F^2) with orthonormal bases; projector Frobenius distance / sqrt(2)",
+  "relative_MSE_denominator": "sum of six clean testing-response component sample variances (ddof=1)",
+  "per_iteration_readout": "production bandwidth schedule at that iteration",
+  "projection_control": {
+    "changes": "only initial, final or true tangent projection",
+    "held_fixed": [
+      "training and testing observations",
+      "owner support",
+      "final centers",
+      "final readout bandwidth"
+    ],
+    "true_tangent_used_for_fitting": false
+  },
+  "testing_used_for_selection": false,
+  "per_iteration_testing_selection": false,
+  "arithmetic_mean_over": 10,
+  "sample_standard_deviation_ddof": 1
+}

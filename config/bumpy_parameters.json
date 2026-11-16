@@ -1,0 +1,31 @@
+{
+  "parameters": {
+    "bumpy_sphere_v2_D20_Y0": {
+      "K_offset": 12,
+      "alpha": 0.00152,
+      "bite": 6,
+      "eval_h": 0.31685994165138015,
+      "eval_rho": 1.125,
+      "h_scale": 2.45,
+      "rho_init": 2.6241338308253725
+    },
+    "bumpy_sphere_v2_D20_Y2": {
+      "K_offset": 0,
+      "alpha": 0.00152,
+      "bite": 4,
+      "eval_h": 0.14814814814814814,
+      "eval_rho": 1.5396007178390019,
+      "h_scale": 6.999999999999999,
+      "rho_init": 0.3448275862068966
+    }
+  },
+  "paper_notation": {
+    "alpha": "pi_Y",
+    "K_offset": "k_0",
+    "h_scale": "h_rescale",
+    "rho_init": "rho_0",
+    "bite": "k_h",
+    "eval_rho": "c_rho",
+    "eval_h": "c_h"
+  }
+}

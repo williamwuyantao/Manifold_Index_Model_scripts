@@ -1,0 +1,57 @@
+{
+  "curves": {
+    "models": ["single_index", "meyer_helix"],
+    "ambient_dimensions": [18, 24, 30],
+    "repetitions": 3,
+    "single_index_input": "generated IID directly in the experiment; no input dataset",
+    "meyer_helix_input": "two-million-point pools, constant normal Gaussian noise sigma=0.5",
+    "figures": "six vector learning curves and displayed means/error-bar caps"
+  },
+  "bumpy_sphere": {
+    "manifold": "v2",
+    "ambient_dimension": 20,
+    "response_maps": [
+      "Y0",
+      "Y2"
+    ],
+    "final_figure": "ten independent IID fits per sample size; mean and sample standard deviation",
+    "selection": "Stage 1 calibration, Stage 2 cross-sample-size selection and single-run curves, Stage 3 single-run curves"
+  },
+  "coupled_helix": {
+    "response_maps": [
+      "A",
+      "B",
+      "C"
+    ],
+    "final_figure": "ten independent IID fits per sample size",
+    "selection": "complete A/B/C single-realization curves"
+  },
+  "phase2": {
+    "dataset": "bumpy v2 D20 Y2; local-reach normal noise",
+    "replacement_sample_sizes": [
+      500000,
+      700000,
+      1000000
+    ],
+    "repetitions": 10,
+    "measurements": [
+      "every updated training tangent",
+      "every iteration testing errors",
+      "initial/final/true projection readouts with a common final bandwidth"
+    ]
+  },
+  "global_tube": {
+    "radius_ratios": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "noise": "uniform in the full normal ball; fixed radius c times global reach",
+    "dataset_relation": "distinct noisy predictors for each c; shared clean samples and standardized noise"
+  },
+  "reaction_coordinate": {
+    "ambient_dimension": 20,
+    "training_rows": 400000,
+    "result": "fixed-sample testing relative mean squared error and tangent error; no decay fit"
+  }
+}

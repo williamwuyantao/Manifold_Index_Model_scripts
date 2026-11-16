@@ -1,0 +1,253 @@
+{
+  "N_values": [
+    10000,
+    20000,
+    30000,
+    40000,
+    50000,
+    70000,
+    100000,
+    200000,
+    300000,
+    400000,
+    500000,
+    700000,
+    1000000,
+    2000000,
+    3000000,
+    4000000,
+    5000000,
+    7000000
+  ],
+  "base_seed": 2026100809,
+  "canonical_identity": {
+    "ambient_d": 20,
+    "cache_policy": "no cross-cell or cross-dataset cache",
+    "chunk_size": 200000,
+    "dataset": "bumpy_sphere_v2",
+    "geometry_formula": {
+      "broad_v0_factor": 0.75,
+      "construction": "two_scale_v0_plus_centered_fibonacci_caps",
+      "micro_amplitude": 0.36,
+      "micro_cap_centering": "0.5*w^2*(1-exp(-2/w^2))",
+      "micro_center_count": 32,
+      "micro_fibonacci_phase": 0.73,
+      "micro_raw_rule": "0.72*sin(1.73*i+0.21)+0.28*cos(2.91*i+0.47), mean-centered and max-abs normalized",
+      "micro_width_rule": "0.26+0.055*((5*i+1) mod 8)/7",
+      "v0_amplitude": [
+        0.18,
+        -0.12,
+        0.1,
+        0.075,
+        -0.065,
+        0.055
+      ],
+      "v0_centers": [
+        [
+          0.8310811086191705,
+          -0.22028655891110546,
+          0.5106642956575627
+        ],
+        [
+          -0.31045048003119535,
+          0.9113223768657671,
+          0.2703923535755573
+        ],
+        [
+          0.15001500225037506,
+          -0.6200620093015502,
+          0.7700770115519253
+        ],
+        [
+          -0.7593927286285599,
+          -0.4396484218375873,
+          -0.47961646018645887
+        ],
+        [
+          0.5493959964233911,
+          0.3895717065547682,
+          -0.7391873406423806
+        ],
+        [
+          -0.17974852796821766,
+          0.09986029331567649,
+          0.9786308744936295
+        ]
+      ],
+      "v0_linear": [
+        0.035,
+        -0.025,
+        0.045
+      ],
+      "v0_width": [
+        0.36,
+        0.52,
+        0.43,
+        0.61,
+        0.39,
+        0.56
+      ],
+      "version": "bumpy_sphere_v2"
+    },
+    "geometry_formula_sha256": "32feb22a0f2a6e1185354c6afe9dea9f79f3bd6b0366c0d067a3f377ec1fbd14",
+    "geometry_scale": 47.19858183760044,
+    "global_reach_calibration": "65536-point equal-area screen plus multi-start float64 continuous focal minimization; N=50000 exhaustive pairwise audit was nonlimiting",
+    "latent_seed": 2026082601,
+    "local_reach_rule": "kNN-IDW of float64 pairwise+focal calibration, then pointwise min with analytic focal radius",
+    "manifold_d": 2,
+    "nested_training_prefix_contract": true,
+    "pool_count": 20000000,
+    "raw_global_reach": 0.09475149,
+    "reach_calibration": {
+      "calibration_sha256": "fa35fea13ad991a934f26bc1e4d4aadcc618f4587cf1c11c4bcf32e0fb116ce9",
+      "count": 50000,
+      "focal_limiter_fraction": 0.0522,
+      "focal_reach_quantiles": [
+        0.09489805244573789,
+        0.11870457612063216,
+        0.1731870192839479,
+        0.25164676376790474,
+        0.363579100101149,
+        0.47917863155920204,
+        0.6873506892179344,
+        1.2350579160804782,
+        1.889590160197813,
+        19.884539167610424
+      ],
+      "interpolation": "inverse latent-distance squared kNN IDW; pointwise min with analytic focal radius",
+      "latent_tau": 0.02,
+      "local_reach_quantiles": [
+        0.09489805244573789,
+        0.10884988413225521,
+        0.15703312786342435,
+        0.21988752757646754,
+        0.31194592822507805,
+        0.37585010540714286,
+        0.45311017268393794,
+        0.5811720939618907,
+        0.6503910855892145,
+        0.7600561400417332
+      ],
+      "method": "float64 exhaustive sampled pairwise bottleneck, then min with analytic focal radius",
+      "neighbors": 32,
+      "pairwise_reach_quantiles": [
+        0.0955934004660298,
+        0.10959385296896591,
+        0.157271802065233,
+        0.220111545668937,
+        0.3120278672845226,
+        0.37594037346355336,
+        0.45324303992723625,
+        0.5811747408628647,
+        0.650428828766916,
+        0.7600561400417332
+      ],
+      "sample_rule": "scrambled Sobol equal-area sphere coordinates",
+      "seed": 2026082605
+    },
+    "response": {
+      "candidate_id": "physical-torus-r08-k8.75",
+      "construction": "physical-coordinate-orthogonal-torus-wrap.v1",
+      "identity_sha256": "e130404b38dcf9dd6553d23a2983c007ddf26b6b0488c868a175de1a5c6b6f3a",
+      "kappa": 8.75,
+      "legacy_formula_sha256": "f6e0c7ad8354045eb56b38aca85da4eb3f138a8523eb8ee6178ea4ad5a6ed001",
+      "normalization": "(raw_cos_sin+1)/2; exact coordinate range [0,1]",
+      "rotation": [
+        [
+          0.04400330497343763,
+          0.2393049104476821,
+          -0.9699468382272511
+        ],
+        [
+          -0.30239263248978127,
+          0.9285337478735444,
+          0.21536892736838617
+        ],
+        [
+          0.952167214814349,
+          0.2838278331938852,
+          0.11322259552381468
+        ]
+      ],
+      "rotation_index": 8,
+      "rotation_seed": 20260717
+    },
+    "rng_chunk_key": "SeedSequence(base_seed,split_code,row_start,stream,ambient_d); ambient_d=0 for latent/Y",
+    "schema": "mfm-bumpy-sphere-family.v1",
+    "selection_seed": 2026082604,
+    "shared_pairing_rule": "same split/row latent draws across v1/v2/v3 and D10/D20",
+    "split_counts": {
+      "test": 2000000,
+      "train": 16000000,
+      "validation": 2000000
+    },
+    "split_iid": true,
+    "split_rule": "three independent RNG streams with exact 80/10/10 counts",
+    "target_global_reach": 4.47213595499958,
+    "testing_cap": 5000,
+    "validation_cap": 5000,
+    "x_noise_reach_safety": 0.98,
+    "x_noise_rule": "target-D Gaussian direction; truncated chi-square_D radius; tangent projection; local focal-reach scaling",
+    "x_noise_seed": 2026082602,
+    "x_noise_sigma": 0.5,
+    "y_noise_relative": 0.003,
+    "y_noise_rule": "relative*Cov(Y_clean)^(1/2) Gaussian; covariance from deterministic 262144-point equal-area sphere rule",
+    "y_noise_seed": 2026082603
+  },
+  "entry_sha256": "0f14c8f15d62a68108f428efd84473104a3439d5f54b2c5eb4da4f6530b63ae0",
+  "error_bar": "sample standard deviation across the 10 new repetitions (ddof=1)",
+  "generator_sha256": "d09151a75c386379bbcca43c71e3124491dba2b6d514e772224d2298c5f63519",
+  "old_single_runs_in_ensemble": false,
+  "pairing": "Y0 and Y2 share X and standardized noise within one repetition",
+  "parameters": {
+    "bumpy_sphere_v2_D20_Y0": {
+      "K_offset": 12,
+      "alpha": 0.00152,
+      "bite": 6,
+      "eval_h": 0.31685994165138015,
+      "eval_rho": 1.125,
+      "h_scale": 2.45,
+      "rho_init": 2.6241338308253725
+    },
+    "bumpy_sphere_v2_D20_Y2": {
+      "K_offset": 0,
+      "alpha": 0.00152,
+      "bite": 4,
+      "eval_h": 0.14814814814814814,
+      "eval_rho": 1.5396007178390019,
+      "h_scale": 6.999999999999999,
+      "rho_init": 0.3448275862068966
+    }
+  },
+  "queries_per_split": 5000,
+  "repetitions": 10,
+  "resampling": "fresh IID predictors and fresh noise in every N/repetition/split",
+  "response_noise_relative": 0.01,
+  "response_rotation": [
+    [
+      0.04400330497343763,
+      0.2393049104476821,
+      -0.9699468382272511
+    ],
+    [
+      -0.30239263248978127,
+      0.9285337478735444,
+      0.21536892736838617
+    ],
+    [
+      0.952167214814349,
+      0.2838278331938852,
+      0.11322259552381468
+    ]
+  ],
+  "rng_key": [
+    "base_seed",
+    "N",
+    "repetition",
+    "split",
+    "stream",
+    "chunk_start"
+  ],
+  "schema": "mfm-bumpy-figure9-iid-repetitions.v1",
+  "selection": "existing frozen validation-only seven tuples; no retuning"
+}

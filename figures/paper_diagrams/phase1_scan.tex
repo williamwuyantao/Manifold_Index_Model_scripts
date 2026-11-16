@@ -1,0 +1,253 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,graphicx,xcolor,tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\newcommand{\M}{\mathcal M}
+\newcommand{\R}{\mathbb R}
+\newcommand{\T}{\mathsf T}
+\newcommand{\Wwin}{\mathcal W}
+\newcommand{\Hscore}{\mathcal H}
+\DeclareMathOperator{\reach}{reach}
+% Numbering in the submitted manuscript.
+\makeatletter
+\newlabel{prop:pilot}{{3.1}{}}
+\newlabel{prop:step}{{3.2}{}}
+\newlabel{prop:finite}{{3.3}{}}
+\newlabel{prop:readout}{{3.4}{}}
+\newlabel{thm:isolated-rank}{{3.5}{}}
+\makeatother
+\pagestyle{empty}
+\begin{document}
+\setbox0=\hbox\bgroup
+\begin{tikzpicture}[x=.028cm,y=.028cm,>=Stealth,
+  declare function={
+    eigsat(\r,\L,\s)=\L*(\r/\s)^2/sqrt(1+(\r/\s)^4)*(1+.012*\r);
+    eignormal(\r)=eigsat(\r,72,32);
+    eigtangent(\r)=eigsat(\r,5.57,12);
+    eigstep(\u)=(min(1,max(0,\u)))^3
+      *(10-15*min(1,max(0,\u))+6*(min(1,max(0,\u)))^2);
+    eigjoin(\r)=eigtangent(\r)+150*eigstep((\r-46)/30)*(1+.012*\r);
+    eigsoft(\a,\b)=ln(1+exp(-6*abs(ln(\a)-ln(\b))))/6;
+    eigfirst(\r)=max(ln(eignormal(\r)),ln(eigjoin(\r)))
+      +eigsoft(eignormal(\r),eigjoin(\r));
+    eiggap(\r)=min(ln(eigjoin(\r)),ln(.43*eignormal(\r)))
+      -eigsoft(eigjoin(\r),.43*eignormal(\r));
+    eigscore(\r)=2*(ln(eignormal(\r))-.3993)-eigfirst(\r)-eiggap(\r);
+    eigy(\l)=13*(\l+1.9);
+  }]
+% Phase-1 schematic. The geometry and palette are shared numerically with
+% the Phase-2 schematic so that Figure 3(a) reproduces this figure's middle panel.
+\definecolor{respblue}{RGB}{50,111,152}
+\definecolor{respnormal}{RGB}{153,63,123}
+\definecolor{respthinblue}{RGB}{142,171,188}
+\definecolor{resplightblue}{RGB}{241,245,247}
+\definecolor{respblueedge}{RGB}{174,185,192}
+\definecolor{respfiber}{RGB}{195,203,208}
+\definecolor{resporange}{RGB}{230,164,123}
+\definecolor{resporangeedge}{RGB}{184,80,37}
+\definecolor{resptan}{RGB}{241,229,220}
+\definecolor{resptanedge}{RGB}{217,192,173}
+\definecolor{respblack}{RGB}{34,43,49}
+\definecolor{respfone}{RGB}{62,118,62}%
+\definecolor{respftwo}{RGB}{86,74,150}
+
+\newcommand{\respannulus}[3]{%
+  \path[fill=#3,draw=none]
+    ({99.75*cos(#1)},{99.75*sin(#1)})
+    arc[start angle=#1,end angle=#2,radius=99.75]
+    -- ({42.75*cos(#2)},{42.75*sin(#2)})
+    arc[start angle=#2,end angle=#1,radius=42.75] -- cycle;
+}
+
+\newcommand{\resppacketfibers}[2]{%
+  \foreach \aa in {#1}
+    \draw[#2,line width=.55pt]
+      ({99.75*cos(\aa)},{99.75*sin(\aa)}) --
+      ({42.75*cos(\aa)},{42.75*sin(\aa)});
+}
+
+\newcommand{\resppackets}[2]{%
+  \respannulus{-125.5}{-102.5}{#1}
+  \respannulus{-64.5}{-41.5}{#1}
+  \resppacketfibers{-124.5,-117.2,-109.8,-103.5}{#2}
+  \resppacketfibers{-63.5,-56.2,-48.8,-42.5}{#2}
+}
+
+\newcommand{\respsection}{%
+  \begin{scope}
+    \clip (-73.03,-107.23) rectangle (77.31,-12.47);
+    \respannulus{-142.1}{-29.8}{resplightblue}
+    \draw[respblueedge,dash pattern=on 1.3pt off 1.82pt,line width=.65pt]
+      ({99.75*cos(-142.1)},{99.75*sin(-142.1)})
+      arc[start angle=-142.1,end angle=-29.8,radius=99.75];
+    \draw[respblueedge,dash pattern=on 1.3pt off 1.82pt,line width=.65pt]
+      ({42.75*cos(-142.1)},{42.75*sin(-142.1)})
+      arc[start angle=-142.1,end angle=-29.8,radius=42.75];
+    \foreach \aa in {-138.7,-91.7,-76.8,-32.7}
+      \draw[respfiber,line width=.65pt]
+        ({99.75*cos(\aa)},{99.75*sin(\aa)}) --
+        ({42.75*cos(\aa)},{42.75*sin(\aa)});
+    \resppackets{resptan}{resptanedge}
+  \end{scope}
+}
+
+\newcommand{\respmanifold}{%
+  \draw[respthinblue,line width=1.15pt]
+    ({71.25*cos(-142.1)},{71.25*sin(-142.1)})
+    arc[start angle=-142.1,end angle=-29.8,radius=71.25];
+  \node[respblue,font=\small] at (49,-25) {$\mathcal M$};
+  \draw[respblue!82,line width=.65pt] (-18,-99) -- (-8,-71);
+  \node[respblue,font=\scriptsize] at (-19,-108) {$C_1\subset\mathcal M$};
+  \draw[respblue!82,line width=.65pt] (52,-91) -- (49,-60);
+  \node[respblue,font=\scriptsize] at (48,-103) {$C_2\subset\mathcal M$};
+}
+
+\newcommand{\resppacketmanifold}{%
+  \foreach \lo/\hi in {-125.5/-102.5,-64.5/-41.5}{%
+    \draw[white,line width=4.7pt]
+      ({71.25*cos(\lo)},{71.25*sin(\lo)})
+      arc[start angle=\lo,end angle=\hi,radius=71.25];
+    \draw[respblue,line width=3pt]
+      ({71.25*cos(\lo)},{71.25*sin(\lo)})
+      arc[start angle=\lo,end angle=\hi,radius=71.25];
+    \filldraw[fill=respblue,draw=white,line width=.7pt]
+      ({71.25*cos(\lo)},{71.25*sin(\lo)}) circle[radius=2.1pt];
+    \filldraw[fill=respblue,draw=white,line width=.7pt]
+      ({71.25*cos(\hi)},{71.25*sin(\hi)}) circle[radius=2.1pt];
+  }
+}
+
+\newcommand{\respball}[1]{%
+  \begin{scope}
+    \clip (-73.03,-107.23) rectangle (77.31,-12.47);
+    \begin{scope}
+      \clip (-22.80,-51.20) circle[radius=#1];
+      \resppackets{resporange}{resporangeedge}
+    \end{scope}
+    \draw[respblack,line width=1.15pt]
+      (-22.80,-51.20) circle[radius=#1];
+  \end{scope}
+  \respmanifold
+  \begin{scope}
+    \clip (-22.80,-51.20) circle[radius=#1];
+    \resppacketmanifold
+  \end{scope}
+  \filldraw[fill=respblack,draw=white,line width=.7pt]
+    (-22.80,-51.20) circle[radius=2pt];
+  \node[respblack,font=\small,anchor=south west,inner sep=1pt]
+    at (-19,-48) {$X_i$};
+}
+
+\newcommand{\resppanel}[3]{%
+  \begin{scope}[shift={(#1,0)}]
+    \respsection
+    \respball{#3}
+    \node[font=\small,fill=none,draw=none] at (2,5) {#2};
+  \end{scope}
+}
+
+
+  \resppanel{0}{(a) Small radius}{12}
+  \draw[respblack,line width=.5pt] (-22.80,-51.20) -- (-30.5,-60.4);
+  \node[font=\scriptsize] at (-35,-65) {$r_1$};
+
+  \resppanel{176}{(b) Intermediate radius}{39}
+  \draw[respblack,line width=.5pt] (153.20,-51.20) -- (139.86,-14.55);
+  \node[font=\scriptsize] at (146,-24) {$r_2$};
+
+  \resppanel{352}{(c) Large radius}{67}
+  \draw[respblack,line width=.5pt] (329.20,-51.20) -- (392.16,-28.29);
+  \node[font=\scriptsize] at (382,-24) {$r_3$};
+
+  \newcommand{\respregimes}[2]{%
+    \fill[resplightblue] (14.4,0) rectangle (57.6,106);
+    \draw[respblueedge,line width=.4pt] (14.4,0) -- (14.4,106);
+    \draw[respblueedge,line width=.4pt] (57.6,0) -- (57.6,106);
+    \foreach \xx/\rr in {7.2/1,53.4/2,76.8/3} {
+      \draw[respfiber,dash pattern=on 1.5pt off 2pt,line width=.55pt]
+        (\xx,0) -- (\xx,106);
+      \draw[respblack,line width=.6pt] (\xx,0) -- (\xx,-3);
+      \node[font=\small,anchor=north] at (\xx,-5) {$r_{\rr}$};
+    }
+    \draw[respblack,->,line width=.75pt] (0,0) -- (100,0);
+    \draw[respblack,->,line width=.75pt] (0,0) -- (0,110);
+    \foreach \xx/\lab/\bg in {7.2/a/#1,36/b/resplightblue,#2/c/none}
+      \node[font=\scriptsize,anchor=south,inner sep=1pt,fill=\bg]
+        at (\xx,4) {(\lab)};
+    \node[font=\small,anchor=north] at (98,-4) {$r$};
+  }
+  \begin{scope}[shift={(124,-263)}]
+    \node[font=\small] at (50,132) {(e) Spectrum of $\widehat\Sigma_i(r)$};
+    \respregimes{none}{66}%
+    \node[font=\small,rotate=90] at (-12,53) {$\log\lambda_j$};
+    \foreach \ff in {.45,.497,.548,.605,.668,.737}
+      \draw[respthinblue,line width=.4pt,line cap=round]
+        plot[domain=3:80,samples=90,smooth,variable=\rad]
+          ({1.2*(\rad-2)},{eigy(ln(\ff*eigtangent(\rad)))});
+    \draw[respblue,line width=1.3pt,line cap=round]
+      plot[domain=3:80,samples=140,smooth,variable=\rad]
+        ({1.2*(\rad-2)},{eigy(eiggap(\rad))});
+    \foreach \ff in {.5,.5437,.5911,.6427,.6988,.7598,.8261,.9}
+      \draw[respnormal,line width=.45pt,line cap=round]
+        plot[domain=3:80,samples=90,smooth,variable=\rad]
+          ({1.2*(\rad-2)},{eigy(ln(\ff*eignormal(\rad)))});
+    \draw[respblack,line width=1.15pt,line cap=round]
+      plot[domain=3:80,samples=140,smooth,variable=\rad]
+        ({1.2*(\rad-2)},{eigy(eigfirst(\rad))});
+    \node[respblack,font=\scriptsize,anchor=west] at (95,98) {$\lambda_1$};
+    \node[respnormal,font=\scriptsize,anchor=west] at (95,89) {$\lambda_2$};
+    \foreach \yy in {80.6,82.8,85}
+      \fill[respnormal] (99.6,\yy) circle[radius=.42pt];
+    \node[respnormal,font=\scriptsize,anchor=west] at (95,76) {$\lambda_{D-m}$};
+    \node[respblue,font=\scriptsize,anchor=north,inner sep=1pt]
+      at (92,72) {$\lambda_{D-m+1}$};
+    \node[respthinblue!80!respblack,font=\scriptsize,anchor=west]
+      at (95,55) {$\lambda_{D-m+2}$};
+    \foreach \yy in {46.6,48.8,51}
+      \fill[respthinblue!80!respblack] (99.6,\yy) circle[radius=.42pt];
+    \node[respthinblue!80!respblack,font=\scriptsize,anchor=west]
+      at (95,42) {$\lambda_D$};
+  \end{scope}
+  \begin{scope}[shift={(316,-263)}]
+    \node[font=\small] at (38,132) {(f) Radius-selection score $\Hscore$};
+    \respregimes{white}{64}%
+    \node[font=\small,rotate=90] at (-22,53)
+      {$\Hscore(\widehat\Sigma_i(r))$};
+    \draw[respblack,line width=.6pt] (0,30) -- (-3,30);
+    \node[font=\scriptsize,anchor=east] at (-4,30) {$0$};
+    \draw[respfiber,line width=.5pt] (0,30) -- (95,30);
+    \draw[resporangeedge,line width=1.35pt,line cap=round]
+      plot[domain=3:80,samples=160,smooth,variable=\rad]
+        ({1.2*(\rad-2)},{30+40*eigscore(\rad)});
+    \filldraw[fill=resporangeedge,draw=white,line width=.6pt]
+      (53.4,96.4) circle[radius=2.2pt];
+    \node[resporangeedge,font=\scriptsize,anchor=west,align=left,
+      inner sep=1pt] at (57,95) {selected\\radius};
+  \end{scope}
+  \node[font=\small] at (11,-131) {(d) Response preimage};%
+  \begin{scope}[shift={(-76,-280)},x=4.9cm,y=3.548cm]
+    \node[anchor=south west,inner sep=0] at (0,0)
+      {\includegraphics[width=4.9cm]{MFM_m2_preimage_slabs.pdf}};
+    \node[respblue,font=\small] at (.12,.36) {$\mathcal M$};
+    \node[respfone,font=\scriptsize,inner sep=1pt] (S1) at (.69,.955)
+      {$\approx F_1^{-1}\bigl((Y_i)_1\bigr)$};
+    \draw[respfone,line width=.4pt]
+      (S1.south west) ++(.1,0) -- (.54,.87);
+    \draw[respfone,line width=.4pt]
+      (S1.south east) ++(-.06,0) -- (.79,.785);
+    \node[respftwo,font=\scriptsize,anchor=east,inner sep=1pt] (S2) at (1.0,.09)
+      {$\approx F_2^{-1}\bigl((Y_i)_2\bigr)$};
+    \draw[respftwo,line width=.4pt]
+      (S2.north east) ++(-.1,0) -- (.81,.215);
+    \node[resporangeedge,font=\scriptsize] (Ui) at (.20,.92) {Selected fibers};
+    \draw[resporangeedge,line width=.4pt] (Ui.south east) -- (.375,.625);
+    \draw[resporangeedge,line width=.4pt] (Ui.east) -- (.633,.527);
+  \end{scope}
+  \node[font=\small] at (current bounding box.north |- 0,44)
+    {{\bf{Phase 1, Multiscale PCA in a response preimage}}};
+\end{tikzpicture}
+\egroup
+\pdfpagewidth=\dimexpr\wd0+4pt\relax
+\pdfpageheight=\dimexpr\ht0+\dp0+4pt\relax
+\hoffset=-1in \voffset=-1in
+\shipout\vbox{\kern2pt\hbox{\kern2pt\box0}}
+\end{document}

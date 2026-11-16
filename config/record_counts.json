@@ -1,0 +1,30 @@
+{
+  "curve_experiments": 6,
+  "curve_displayed_means": 522,
+  "bumpy_iid": 360,
+  "iteration_cases": 30,
+  "direct_state_cases": 30,
+  "coupled_iid": 540,
+  "bumpy_selection": {
+    "bumpy_sphere_v2_D20_Y0_stage1": 333,
+    "bumpy_sphere_v2_D20_Y0_stage2_selection": 717,
+    "bumpy_sphere_v2_D20_Y0_stage2_curve": 15,
+    "bumpy_sphere_v2_D20_Y0_stage3_curve": 7,
+    "bumpy_sphere_v2_D20_Y2_stage1": 499,
+    "bumpy_sphere_v2_D20_Y2_stage2_selection": 609,
+    "bumpy_sphere_v2_D20_Y2_stage2_curve": 15,
+    "bumpy_sphere_v2_D20_Y2_stage3_curve": 7
+  },
+  "phase2_iteration_states": 850,
+  "phase2_N_values": [
+    500000,
+    700000,
+    1000000
+  ],
+  "c025_selection": 878,
+  "c025_iid": 140,
+  "c050_selection": 714,
+  "c050_iid": 166,
+  "c075_selection": 593,
+  "c075_iid": 180
+}

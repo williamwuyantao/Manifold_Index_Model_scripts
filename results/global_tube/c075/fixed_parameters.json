@@ -1,0 +1,460 @@
+{
+  "N_values": [
+    1000,
+    2000,
+    3000,
+    4000,
+    5000,
+    7000,
+    10000,
+    20000,
+    30000,
+    40000,
+    50000,
+    70000,
+    100000,
+    200000,
+    300000,
+    400000,
+    500000,
+    700000
+  ],
+  "ranking": [
+    {
+      "geometric_mean_regret_fraction": 0.33130922949336794,
+      "max_regret_fraction": 17.167251477272742,
+      "name": "pilot_K_offset_0",
+      "parameters": {
+        "K_offset": -4,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.5045051813247607,
+      "max_regret_fraction": 17.996344254202047,
+      "name": "pilot_alpha_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.002128,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.3742672129228286,
+      "max_regret_fraction": 18.086783921112186,
+      "name": "pilot_eval_rho_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 2.1554410049746027,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.5901570663206308,
+      "max_regret_fraction": 20.153118713294987,
+      "name": "pilot_rho_init_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.4827586206896552
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.7817372294826501,
+      "max_regret_fraction": 24.329165191994967,
+      "name": "pilot_h_scale_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 5.0,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 4.750906968193747,
+      "max_regret_fraction": 24.92177420835698,
+      "name": "axis_eval_rho_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.75,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 4.869743112048148,
+      "max_regret_fraction": 25.07827953598923,
+      "name": "axis_eval_h_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.3333333333333333,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 5.423715793309005,
+      "max_regret_fraction": 25.12531837926758,
+      "name": "axis_h_scale_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 5.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 4.848337380321665,
+      "max_regret_fraction": 25.25797017457507,
+      "name": "axis_K_offset_0",
+      "parameters": {
+        "K_offset": 16.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 4.821535823826203,
+      "max_regret_fraction": 25.28986386109236,
+      "name": "axis_rho_init_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 3.6194949390694795
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.6803813527785978,
+      "max_regret_fraction": 27.478303182709638,
+      "name": "existing_Y2_reference",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.6759030676240361,
+      "max_regret_fraction": 27.81464605233131,
+      "name": "pilot_bite_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 6,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 4.729240978214904,
+      "max_regret_fraction": 28.119627300873837,
+      "name": "axis_alpha_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.007709,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 5.425182639456769,
+      "max_regret_fraction": 28.119627300873837,
+      "name": "n1m_winner",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.731085994662009,
+      "max_regret_fraction": 28.119627300873837,
+      "name": "axis_alpha_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.003423,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 5.449979594126915,
+      "max_regret_fraction": 28.573225999902363,
+      "name": "axis_bite_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 8.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.6936713278324196,
+      "max_regret_fraction": 28.580322024018905,
+      "name": "pilot_bite_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 2,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 5.524879090113294,
+      "max_regret_fraction": 28.699865594347525,
+      "name": "axis_bite_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 4.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.9597875870074233,
+      "max_regret_fraction": 30.223560157911283,
+      "name": "pilot_eval_h_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.10582010582010581,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.6962651802190776,
+      "max_regret_fraction": 31.86346320272449,
+      "name": "pilot_eval_h_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.20740740740740737,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.656033656959575,
+      "max_regret_fraction": 33.43987149726822,
+      "name": "axis_rho_init_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 1.902497027348395
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.746249014175739,
+      "max_regret_fraction": 33.59842806744736,
+      "name": "axis_K_offset_2",
+      "parameters": {
+        "K_offset": 24.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.586387050068709,
+      "max_regret_fraction": 34.50093179260236,
+      "name": "axis_eval_rho_0",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.3333333333333333,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 0.9560237579424176,
+      "max_regret_fraction": 34.734449580160025,
+      "name": "pilot_alpha_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.001086,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.579785499111271,
+      "max_regret_fraction": 37.805284681562505,
+      "name": "axis_eval_h_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.75,
+        "eval_rho": 0.5,
+        "h_scale": 7.0,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 6.4588413908879385,
+      "max_regret_fraction": 38.03953120598282,
+      "name": "axis_h_scale_2",
+      "parameters": {
+        "K_offset": 20.0,
+        "alpha": 0.005137,
+        "bite": 6.0,
+        "eval_h": 0.5,
+        "eval_rho": 0.5,
+        "h_scale": 9.8,
+        "rho_init": 2.6241338308253725
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 1.6797087147721,
+      "max_regret_fraction": 39.72966305772156,
+      "name": "pilot_h_scale_1",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 9.799999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 1.3127837031536052,
+      "max_regret_fraction": 45.76677218781951,
+      "name": "pilot_eval_rho_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.09971479845643,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 1.2838466791970715,
+      "max_regret_fraction": 51.16796450376564,
+      "name": "pilot_rho_init_0",
+      "parameters": {
+        "K_offset": 0,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.24630541871921185
+      }
+    },
+    {
+      "geometric_mean_regret_fraction": 1.2317284276902054,
+      "max_regret_fraction": 54.41354532173296,
+      "name": "pilot_K_offset_1",
+      "parameters": {
+        "K_offset": 4,
+        "alpha": 0.00152,
+        "bite": 4,
+        "eval_h": 0.14814814814814814,
+        "eval_rho": 1.5396007178390019,
+        "h_scale": 6.999999999999999,
+        "rho_init": 0.3448275862068966
+      }
+    }
+  ],
+  "selection_data": "validation only",
+  "testing_used": false,
+  "winner": {
+    "geometric_mean_regret_fraction": 0.33130922949336794,
+    "max_regret_fraction": 17.167251477272742,
+    "name": "pilot_K_offset_0",
+    "parameters": {
+      "K_offset": -4,
+      "alpha": 0.00152,
+      "bite": 4,
+      "eval_h": 0.14814814814814814,
+      "eval_rho": 1.5396007178390019,
+      "h_scale": 6.999999999999999,
+      "rho_init": 0.3448275862068966
+    }
+  }
+}

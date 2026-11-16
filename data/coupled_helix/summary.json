@@ -1,0 +1,478 @@
+{
+  "schema": "mfm-meyer-surface-screen.v1",
+  "case": "square_coupled_helix",
+  "complete": true,
+  "N": 100000,
+  "query_count": 10000,
+  "ambient_dimension": 20,
+  "intrinsic_dimension": 2,
+  "source_reference": "https://github.com/williamwuyantao/Nonlinear-Single-Variable-Model-scripts/tree/main/paper_reproduction",
+  "seed": 2026100701,
+  "parameter_domain": "[0,1]^2",
+  "parameter_boundary": true,
+  "sampling_rule": "uniform parameter square",
+  "surface_parameters": {
+    "grid_shape": [
+      5,
+      4
+    ],
+    "coordinate_phase": 10,
+    "width_variation": 0.3
+  },
+  "geometric_parameters": {
+    "raw_sampled_reach": 0.0603484426780234,
+    "scale_factor": 74.10524209977933,
+    "sampled_global_reach": 4.47213595499958,
+    "diameter": 212.23521870302778,
+    "surface_area_uniform_parameter_MC": 122027.72367674918,
+    "area_over_global_reach_squared": 6101.38618383746,
+    "diameter_over_global_reach": 47.45723762395048,
+    "local_reach": {
+      "min": 4.47213595499958,
+      "p01": 8.892053503229052,
+      "p05": 12.506134848512348,
+      "p25": 22.20671718103862,
+      "median": 30.44837690065794,
+      "p75": 39.28602861745453,
+      "p95": 52.25907833978502,
+      "p99": 58.334540516971614,
+      "max": 63.7840513380127
+    },
+    "directional_curvature_lower": {
+      "min": 0.006236872769230291,
+      "p01": 0.007944355013985053,
+      "p05": 0.010025995939567347,
+      "p25": 0.01591676943788127,
+      "median": 0.026047675832589087,
+      "p75": 0.03741907905500254,
+      "p95": 0.07042698949273339,
+      "p99": 0.10152239660879979,
+      "max": 0.2181850108843418
+    },
+    "directional_curvature_upper": {
+      "min": 0.006456665118740687,
+      "p01": 0.00821961423696596,
+      "p05": 0.010366155032807526,
+      "p25": 0.01640980873531979,
+      "median": 0.026770647618414425,
+      "p75": 0.038421428961546156,
+      "p95": 0.07227386328210544,
+      "p99": 0.10417324174740392,
+      "max": 0.22360679774997894
+    },
+    "local_reach_times_curvature": {
+      "min": 0.2695047061210986,
+      "p01": 0.32477282334776436,
+      "p05": 0.41702748339533136,
+      "p25": 0.5976480395899415,
+      "median": 0.7670973465156838,
+      "p75": 0.9281016559170931,
+      "p95": 0.9749203441881126,
+      "p99": 0.9755561702573708,
+      "max": 0.9758803658078372
+    },
+    "jacobian_sigma_min": {
+      "min": 67.67962895648446,
+      "p01": 90.00210108001646,
+      "p05": 107.85291078204112,
+      "p25": 140.34296924539882,
+      "median": 168.68234691473685,
+      "p75": 198.2290720801526,
+      "p95": 231.48380445813834,
+      "p99": 241.5806416888574,
+      "max": 247.07390798647927
+    },
+    "jacobian_condition": {
+      "min": 2.9938149842788655,
+      "p01": 3.08726732086236,
+      "p05": 3.259865484013295,
+      "p25": 3.7397809226260046,
+      "median": 4.24477664492893,
+      "p75": 4.893466274460395,
+      "p95": 6.147084853538675,
+      "p99": 7.626422196146612,
+      "max": 9.960144993616764
+    },
+    "focal_limiter_fraction": 0.15385,
+    "minimum_nonlocal_sampled_chord": 1.3743935209249403
+  },
+  "reach_calibration": {
+    "method": "min curvature-radius bound and sampled Federer tangent/chord quotient",
+    "all_training_pairs_evaluated": true,
+    "training_points": 100000,
+    "all_queries_vs_training": true,
+    "latent_exclusion_radius": 0.02,
+    "directional_curvature_angles": 128,
+    "curvature_upper_rule": "sampled directional maximum + pi*||II||F/128",
+    "reach_is_numerical_sample_estimate": true,
+    "half_reference_to_full_relative_decrease": {
+      "min": -1.28549513174336e-16,
+      "p01": -1.2069470718424273e-16,
+      "p05": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0004247855469742107,
+      "p95": 0.006245226568734792,
+      "p99": 0.021196322314762237,
+      "max": 0.13805541014035938
+    },
+    "float_dtype": "float64"
+  },
+  "noise": {
+    "sigma": 0.5,
+    "preprojection_chi_truncation": 0.9,
+    "reach_safety": 0.98,
+    "normal_space_dimension": 18,
+    "noise_over_local_reach": {
+      "min": 0.1714862722748885,
+      "p01": 0.2913572066977205,
+      "p05": 0.3356430490158705,
+      "p25": 0.4054207042075559,
+      "median": 0.4562473602159475,
+      "p75": 0.509374067888463,
+      "p95": 0.588417398114127,
+      "p99": 0.6466251397551398,
+      "max": 0.8510024246707845
+    },
+    "noise_tangent_inner_product_max": 1.9761969838327786e-14
+  },
+  "pca": {
+    "fit_inputs": "noisy X training samples only",
+    "training_rows": 100000,
+    "independent_query_rows": 10000,
+    "clean_used_for_fitting": false,
+    "automatic_gap_rank": 2,
+    "observed_spectrum": {
+      "eigenvalues": [
+        3597.3670296116093,
+        3216.8068019357884,
+        1048.3620054453525,
+        693.8547174733669,
+        645.8750546056707,
+        444.5358806282212,
+        147.76980356822844,
+        112.43963001143335,
+        46.1490393845745,
+        32.689988509179585,
+        27.180758032530036,
+        24.66800760667132,
+        22.239710064848637,
+        20.164385514769208,
+        16.980349310069965,
+        16.225401013950552,
+        14.100611343918857,
+        13.786912864155969,
+        13.612145100778356,
+        13.353494223514817
+      ],
+      "rank_95pct": 7,
+      "rank_99pct": 14,
+      "stable_rank": 2.826556657285659,
+      "participation_ratio": 4.0505362095155215,
+      "top3_variance_fraction": 0.7732504703083138
+    },
+    "clean_spectrum_evaluation_only": {
+      "eigenvalues": [
+        3589.9046312224473,
+        3209.3093673029803,
+        1039.6765197358702,
+        682.0898230400248,
+        636.4613727423167,
+        432.0965666477348,
+        135.45729333471934,
+        100.13876047580435,
+        33.1997171028424,
+        19.547412374844377,
+        13.85444205909338,
+        11.553131746573419,
+        9.186157693706647,
+        6.9294689213228295,
+        3.60877711411709,
+        2.8413192887339105,
+        0.8018929270540903,
+        0.4580266824853773,
+        0.11882980102956152,
+        0.08996251012036309
+      ],
+      "rank_95pct": 6,
+      "rank_99pct": 9,
+      "stable_rank": 2.7653446240278905,
+      "participation_ratio": 3.886817119925325,
+      "top3_variance_fraction": 0.7896277924054078
+    },
+    "unprojected_noise_relative_mse": 0.02433945566757813,
+    "rows": [
+      {
+        "rank": 2,
+        "retained_noisy_training_variance": 0.6701480577317067,
+        "heldout_clean_projection_relative_mse": 0.31548706083698314,
+        "heldout_noisy_reconstruction_relative_mse": 0.31704473482075457,
+        "reconstruction_mse_over_unprojected_noise_mse": 13.025958310278915,
+        "tangent_retained_energy": {
+          "min": 0.130276044414407,
+          "p01": 0.15222881951586803,
+          "p05": 0.2357922324352077,
+          "p25": 0.3778628156607191,
+          "median": 0.42536753739890387,
+          "p75": 0.4629184805713621,
+          "p95": 0.5465633562820533,
+          "p99": 0.5853430054091329,
+          "max": 0.6439469606812812
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 5.381611838334037e-08,
+          "p01": 0.00859022598154127,
+          "p05": 0.04676691850240561,
+          "p25": 0.1728271856469949,
+          "median": 0.3461133858808706,
+          "p75": 0.5098697634677627,
+          "p95": 0.6260252099357416,
+          "p99": 0.6980388810389533,
+          "max": 0.7799847993500306
+        },
+        "tangent_projection_under_0p5_fraction": 0.7381
+      },
+      {
+        "rank": 3,
+        "retained_noisy_training_variance": 0.7732504703083138,
+        "heldout_clean_projection_relative_mse": 0.2125783303356807,
+        "heldout_noisy_reconstruction_relative_mse": 0.21497384713201265,
+        "reconstruction_mse_over_unprojected_noise_mse": 8.832319426862654,
+        "tangent_retained_energy": {
+          "min": 0.20609763775626985,
+          "p01": 0.2503891695178721,
+          "p05": 0.35872222931743974,
+          "p25": 0.504155134487966,
+          "median": 0.5863861579041398,
+          "p75": 0.6619678908424743,
+          "p95": 0.803539110472978,
+          "p99": 0.868249400243158,
+          "max": 0.8841296083596466
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.015545002068647618,
+          "p01": 0.1701195682219325,
+          "p05": 0.29417912443414634,
+          "p25": 0.4992424505539833,
+          "median": 0.6182588233521593,
+          "p75": 0.719694779435355,
+          "p95": 0.8516013658431782,
+          "p99": 0.8990777414543812,
+          "max": 0.904475943271791
+        },
+        "tangent_projection_under_0p5_fraction": 0.2516
+      },
+      {
+        "rank": 5,
+        "retained_noisy_training_variance": 0.9050077936227718,
+        "heldout_clean_projection_relative_mse": 0.07897818206487385,
+        "heldout_noisy_reconstruction_relative_mse": 0.08359460742139208,
+        "reconstruction_mse_over_unprojected_noise_mse": 3.4345306880772184,
+        "tangent_retained_energy": {
+          "min": 0.41636261035674177,
+          "p01": 0.5797261573634357,
+          "p05": 0.6459675528520655,
+          "p25": 0.7090410203263228,
+          "median": 0.7687165975725386,
+          "p75": 0.8436915278019417,
+          "p95": 0.9161948394266942,
+          "p99": 0.9418776124383471,
+          "max": 0.9497105599863811
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.5197274361821046,
+          "p01": 0.5531291175702776,
+          "p05": 0.6337322333628064,
+          "p25": 0.7429714379492838,
+          "median": 0.8028476392031995,
+          "p75": 0.861135499112427,
+          "p95": 0.940033384999398,
+          "p99": 0.9614622190110431,
+          "max": 0.9701011017050359
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 8,
+        "retained_noisy_training_variance": 0.9743168126157149,
+        "heldout_clean_projection_relative_mse": 0.010387932646510447,
+        "heldout_noisy_reconstruction_relative_mse": 0.01866722948779834,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.766953449688869,
+        "tangent_retained_energy": {
+          "min": 0.6827265568552908,
+          "p01": 0.7644765903508971,
+          "p05": 0.8353260084991626,
+          "p25": 0.8965069002020619,
+          "median": 0.9323741106192888,
+          "p75": 0.9628845632480107,
+          "p95": 0.9827381639164868,
+          "p99": 0.9889621668356883,
+          "max": 0.9925516060150863
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.6267453495745099,
+          "p01": 0.7662595434911412,
+          "p05": 0.8398564710998053,
+          "p25": 0.9051557937363581,
+          "median": 0.9418101679694599,
+          "p75": 0.9691654201140671,
+          "p95": 0.9879512007018905,
+          "p99": 0.9930037946185037,
+          "max": 0.9960254954586644
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 10,
+        "retained_noisy_training_variance": 0.9820703309031192,
+        "heldout_clean_projection_relative_mse": 0.004988114129910362,
+        "heldout_noisy_reconstruction_relative_mse": 0.01589111759530712,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.652895356919391,
+        "tangent_retained_energy": {
+          "min": 0.7420478834904669,
+          "p01": 0.8224287823288272,
+          "p05": 0.8863780774443568,
+          "p25": 0.9432095424096005,
+          "median": 0.9663362726431448,
+          "p75": 0.9792238656441596,
+          "p95": 0.9892428760416249,
+          "p99": 0.9919738868545305,
+          "max": 0.9945460169810494
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.7071755209791746,
+          "p01": 0.813716123326089,
+          "p05": 0.8867655549998126,
+          "p25": 0.9478125377765223,
+          "median": 0.9709835602818992,
+          "p75": 0.9826264216443726,
+          "p95": 0.992406910208371,
+          "p99": 0.9949987795264483,
+          "max": 0.9964613795358985
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 12,
+        "retained_noisy_training_variance": 0.9871694596379972,
+        "heldout_clean_projection_relative_mse": 0.0024092396663166907,
+        "heldout_noisy_reconstruction_relative_mse": 0.016035880775921225,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.6588430322738132,
+        "tangent_retained_energy": {
+          "min": 0.7900913836561254,
+          "p01": 0.8621856647584452,
+          "p05": 0.9190069230260517,
+          "p25": 0.9652448563273734,
+          "median": 0.9808405186981413,
+          "p75": 0.989800267046667,
+          "p95": 0.9949050836532904,
+          "p99": 0.9968718798968991,
+          "max": 0.9993817355496082
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.7651184238601071,
+          "p01": 0.8539116330840847,
+          "p05": 0.921220688763283,
+          "p25": 0.9680880684664059,
+          "median": 0.9824529765356165,
+          "p75": 0.9908420801144681,
+          "p95": 0.9959344226151076,
+          "p99": 0.9977075425314895,
+          "max": 0.9993892525748461
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 15,
+        "retained_noisy_training_variance": 0.9930096937421017,
+        "heldout_clean_projection_relative_mse": 0.0004373136951233094,
+        "heldout_noisy_reconstruction_relative_mse": 0.01802261415039529,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.7404690719687163,
+        "tangent_retained_energy": {
+          "min": 0.9339473601555756,
+          "p01": 0.9536664508581202,
+          "p05": 0.9800213247320738,
+          "p25": 0.992401354753058,
+          "median": 0.9964066096747562,
+          "p75": 0.9981554529100984,
+          "p95": 0.9993211738376226,
+          "p99": 0.999648401262947,
+          "max": 0.9998560865929133
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.931767150367301,
+          "p01": 0.9528202567865003,
+          "p05": 0.9806482707735292,
+          "p25": 0.9927858049422811,
+          "median": 0.9965634260332398,
+          "p75": 0.9983175158586408,
+          "p95": 0.9994399870456091,
+          "p99": 0.9997342870282517,
+          "max": 0.999905439786258
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 18,
+        "retained_noisy_training_variance": 0.9973480320189358,
+        "heldout_clean_projection_relative_mse": 2.62647165716716e-05,
+        "heldout_noisy_reconstruction_relative_mse": 0.02167454801664085,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.8905107950098028,
+        "tangent_retained_energy": {
+          "min": 0.9970753266472262,
+          "p01": 0.9982584542315165,
+          "p05": 0.9988333077103861,
+          "p25": 0.9995137713932313,
+          "median": 0.999750427094958,
+          "p75": 0.9998867219809291,
+          "p95": 0.9999617629452917,
+          "p99": 0.9999828227381238,
+          "max": 0.9999981713508703
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.9973005382881401,
+          "p01": 0.998345841965077,
+          "p05": 0.9988604096507735,
+          "p25": 0.9995357635008563,
+          "median": 0.9997660647473321,
+          "p75": 0.999901207651742,
+          "p95": 0.9999666775766308,
+          "p99": 0.9999846444889114,
+          "max": 0.9999985088250412
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      },
+      {
+        "rank": 20,
+        "retained_noisy_training_variance": 1.0,
+        "heldout_clean_projection_relative_mse": 1.455424454723361e-30,
+        "heldout_noisy_reconstruction_relative_mse": 0.02433945566757812,
+        "reconstruction_mse_over_unprojected_noise_mse": 0.9999999999999997,
+        "tangent_retained_energy": {
+          "min": 0.9999999999999993,
+          "p01": 0.9999999999999998,
+          "p05": 0.9999999999999999,
+          "p25": 1.0000000000000002,
+          "median": 1.0000000000000004,
+          "p75": 1.0000000000000004,
+          "p95": 1.0000000000000009,
+          "p99": 1.0000000000000009,
+          "max": 1.0000000000000016
+        },
+        "smallest_tangent_projection_singular_value": {
+          "min": 0.999999999999999,
+          "p01": 0.9999999999999994,
+          "p05": 0.9999999999999996,
+          "p25": 0.9999999999999998,
+          "median": 0.9999999999999999,
+          "p75": 1.0,
+          "p95": 1.0000000000000002,
+          "p99": 1.0000000000000004,
+          "max": 1.0000000000000007
+        },
+        "tangent_projection_under_0p5_fraction": 0.0
+      }
+    ]
+  },
+  "samples_sha256": "c85a542639a41b2969d9b3e37dd27239fe2efa5c37efe2d5106f9c6ebf96609b"
+}
